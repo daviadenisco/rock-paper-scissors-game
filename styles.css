@@ -154,3 +154,9 @@ header > h1 {
     50%{background-position:51% 100%}
     100%{background-position:50% 0%}
 }
+
+@media screen and (max-width: 80px) {
+    img {
+         width: 50px;
+    }
+}
