@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #24272E;
+}
+
+header {
+    background-color: white;
+    margin: 20px 0 20px 0;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #25272E;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+}
+
+.scoreboard {
+    border: 3px solid white;
+    border-radius: 4px;
+    color: white;
+    font-size: 46px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    text-align: center;
+    width: 112px;
+    position: relative;
+}
+
+.badge {
+    background-color: #E25840;
+    color: white;
+    font-family: 'Asap', sans-serif;
+    font-size: 14px;
+    padding: 2px 10px;
+}
+
+#user-label {
+    left: -60px;
+    position: absolute;
+    top: 30px;
+}
+
+#comp-label {
+    position: absolute;
+    right: -76px;
+    top: 30px;
+}
+
+.result {
+    color: white;
+    font-size: 40px;
+}
+
+.result > p {
+    font-family: 'Asap', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.choices {
+    height: auto;
+    margin: 50px 0 20px 0;
+    text-align: center;
+}
+
+.choice {
+    border: 4px solid whitesmoke;
+    border-radius: 30%;
+    overflow:hidden;
+    display: inline-block;
+    height: 258px;
+    margin: 0 20px;
+}
+
+.choice:hover {
+    cursor: pointer;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    z-index: 0;
+}
+
+#action-message {
+    color: white;
+    font-family: 'Asap', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.green-glow {
+    border: 4px solid #4dcc7d;
+    box-shadow: 0 0 30px #31b43a;
+}
+ .red-glow {
+    border: 4px solid #fc121b;
+    box-shadow: 0 0 30px #d01115;
+ }
+
+ .grey-glow {
+    border: 4px solid #919193;
+    box-shadow: 0 0 30px #829096;
+ }
+
+ #reset {
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+ }
+
+ #play-again {
+    background: linear-gradient(180deg, #2fa80b, #c0f3b1);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    border-radius: 25px;
+    font-family: 'Asap', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    /* margin-bottom: 8px; */
+    overflow:hidden;
+    padding: 14px;
+    /* background-color: rgb(96, 242, 137); */
+    width: 210px;
+ }
+
+.hide {
+    display: none;
+}
+
+.disable {
+    pointer-events: none;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:51% 100%}
+    100%{background-position:50% 0%}
+}
