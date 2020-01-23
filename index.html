@@ -11,28 +11,43 @@
 <body>
     <header>
         <h1>Rock Paper Scissors</h1>
+        <button id="new-game">New Game</button>
     </header>
-    <div id="reset" class='hide'>
-        <button id="play-again">Play Again</button>
-    </div>
-    <div class="scoreboard">
-        <div id="user-label" class="badge">You</div>
-        <div id="comp-label" class="badge">Comp</div>
-        <span id="user-score">0</span>:<span id="comp-score">0</span>
-    </div>
-    <div class="result">
-        <p>Let's play!</p>
-    </div>
-    <div class="choices">
-        <div id="rock" class="choice">
-            <img src="images/rock.jpg">
+    <div class="choices wrapper">
+        <div class="your-choice-header">Your choices</div>
+        <!-- <div class="your-choices"> -->
+            <div id="user-rock" class="choice your-rock">
+                <img id="your-rock" src="images/rock.jpg">
+            </div>
+            <div id="user-paper" class="choice your-paper">
+                <img id="your-paper" src="images/paper.jpg">
+            </div>
+            <div id="user-scissors" class="choice your-scissors">
+                <img id="your-scissors" src="images/scissors.jpg">
+            </div>
+        <!-- </div> -->
+        <div class="scoreboard">
+            <div id="user-label" class="badge">You</div>
+            <div id="comp-label" class="badge">Comp</div>
+            <span id="user-score">0</span>:<span id="comp-score">0</span>
         </div>
-        <div id="paper" class="choice">
-            <img src="images/paper.jpg">
+        <div class="result-header">
+            <p>Let's play!</p>
+        </div>        
+            <div class="result-animation">
         </div>
-        <div id="scissors" class="choice">
-            <img src="images/scissors.jpg">
-        </div>
+        <div class="comp-choice-header">Comp choices</div>
+        <!-- <div class="comp-choices"> -->
+            <div id="computer-rock" class="choice comp-rock">
+                <img id="comp-rock" src="images/rock.jpg">
+            </div>
+            <div id="computer-paper" class="choice comp-paper">
+                <img id="comp-paper" src="images/paper.jpg">
+            </div>
+            <div id="computer-scissors" class="choice comp-scissors">
+                <img id="comp-scissors" src="images/scissors.jpg">
+            </div>
+        <!-- </div> -->
     </div>
     <p id="action-message">Make your move.</p>
     <script src='app.js' async defer></script>
