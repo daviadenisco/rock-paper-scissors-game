@@ -4,7 +4,6 @@ const userName_div = document.getElementById('user-label')
 const userScore_span = document.getElementById('user-score');
 const compScore_span = document.getElementById('comp-score');
 const scoreboard_div = document.querySelector('.scoreboard');
-const reset_div = document.getElementById('reset');
 const newGame_button = document.getElementById('new-game');
 const result_p = document.querySelector('.result-header > p');
 const choices_div = document.querySelector('.choices');
@@ -16,31 +15,26 @@ const compPaper_img = document.getElementById('comp-paper');
 const compScissors_img = document.getElementById('comp-scissors');
 
 window.addEventListener('click', () => gameWinner());
-console.log('newGame_button.parentNode', newGame_button.parentNode);
 main();
 
 function newGame() {
-    console.log('NEW Game')
     window.location.reload();
 };
 
-function gameWinner(user, comp) {
+function gameWinner(comp, user) {
     user = userScore;
     comp = compScore;
     if (user === 5) {
         result_p.innerHTML = `You have won the match ${user} to ${comp}!`;
         scoreboard_div.classList.add('hide');
-        reset_div.classList.remove('hide');
         choices_div.classList.add('disable');
     } else if (comp === 5) {
         result_p.innerHTML = `Comp has won the match ${comp} to ${user}!`;
         scoreboard_div.classList.add('hide');
-        reset_div.classList.remove('hide');
         choices_div.classList.add('disable');
     }
     newGame_button.addEventListener('click', function() {
         window.location.reload();
-
         newGame();
     });
 };
@@ -72,25 +66,25 @@ function getCompChoice() {
     // and then bounce off of one another back into their respective spots
 
 function animate(user, comp) {
-    let userSelection_img_div = document.getElementById('user-' + user.toLowerCase());
     let compSelection_img_div = document.getElementById('computer-' + comp.toLowerCase());
+    let userSelection_img_div = document.getElementById('user-' + user.toLowerCase());
 
-    userSelection_img_div.classList.remove('your-' + user.toLowerCase());
     compSelection_img_div.classList.remove('comp-' + comp.toLowerCase());
-    compSelection_img_div.classList.add('result-animation');
-    userSelection_img_div.classList.add('result-animation');
+    userSelection_img_div.classList.remove('your-' + user.toLowerCase());
+    userSelection_img_div.classList.add('user-result-animation');
+    compSelection_img_div.classList.add('comp-result-animation');
     
     setTimeout(() => {
         compSelection_img_div.classList.add('comp-' + comp.toLowerCase());
         userSelection_img_div.classList.add('your-' + user.toLowerCase());
-        userSelection_img_div.classList.remove('result-animation');
-        compSelection_img_div.classList.remove('result-animation');
-    }, 500);
+        userSelection_img_div.classList.remove('user-result-animation');
+        compSelection_img_div.classList.remove('comp-result-animation');
+    }, 3000);
 };
 
 function win(user, comp) {
-    let userSelection_img = document.getElementById('your-' + user.toLowerCase());
     let compSelection_img = document.getElementById('comp-' + comp.toLowerCase());
+    let userSelection_img = document.getElementById('your-' + user.toLowerCase());
     userScore++;
     userScore_span.innerHTML = userScore;
    
@@ -99,48 +93,54 @@ function win(user, comp) {
     userSelection_img.classList.add('green-glow');
     compSelection_img.classList.add('red-glow');
     animate(user, comp);
-
+    // debugger;
+console.log('userWin userChoice: ', user);
+console.log('userWin compChoice: ', comp);
+console.log(`You win! ${user} beats ${comp.toLowerCase()}`);
     setTimeout(() => {
-        console.log('WIN')
         userSelection_img.classList.remove('green-glow');
         compSelection_img.classList.remove('red-glow');
-    }, 500);
+        result_p.innerHTML = '';
+    }, 3000);
 };
 
 function lose(user, comp) {
-    let userSelection_img = document.getElementById('your-' + user.toLowerCase());
     let compSelection_img = document.getElementById('comp-' + comp.toLowerCase());
+    let userSelection_img = document.getElementById('your-' + user.toLowerCase());
     compScore++;
     compScore_span.innerHTML = compScore;
    
     result_p.innerHTML = `You lost! ${comp} beats ${user.toLowerCase()}.`;
    
-    userSelection_img.classList.add('red-glow');
     compSelection_img.classList.add('green-glow');
+    userSelection_img.classList.add('red-glow');
     animate(user, comp);
-
+    // debugger;
+    console.log('compWin userChoice: ', user);
+    console.log('compWin compChoice: ', comp);
+    console.log(`You lose! ${comp} beats ${user.toLowerCase()}`);
     setTimeout(() => {
-        console.log('LOSE');
+        compSelection_img.classList.remove('green-glow');  
         userSelection_img.classList.remove('red-glow');
-        compSelection_img.classList.remove('green-glow');        
-    }, 500);
+        result_p.innerHTML = '';      
+    }, 3000);
 };
 
 function draw(user, comp) {
-    let userSelection_img = document.getElementById('your-' + user.toLowerCase());
     let compSelection_img = document.getElementById('comp-' + comp.toLowerCase());
+    let userSelection_img = document.getElementById('your-' + user.toLowerCase());
     result_p.innerHTML = `It's a draw! ${comp} equals ${user.toLowerCase()}.`;
     
-    userSelection_img.classList.add('grey-glow');
     compSelection_img.classList.add('grey-glow');
+    userSelection_img.classList.add('grey-glow');
     animate(user, comp);
-
+    console.log('draw userChoice: ', user);
+    console.log('draw compChoice: ', comp);
     setTimeout(() => {
-        console.log('DRAW');
-        userSelection_img.classList.remove('grey-glow');
         compSelection_img.classList.remove('grey-glow');
-
-    }, 500);
+        userSelection_img.classList.remove('grey-glow');
+        result_p.innerHTML = '';
+    }, 3000);
 };
 
 function game(userChoice) {
