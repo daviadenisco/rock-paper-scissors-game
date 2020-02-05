@@ -121,7 +121,7 @@ img {
 .wrapper {
     color: white;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
@@ -133,7 +133,7 @@ img {
     display: flex;
     font-family: 'Orbitron', sans-serif;
     font-size: 26px;
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
     justify-content: center;
     text-shadow: rgb(56, 55, 55) 0px 0px 2px, #3eda0e 0px 0px 5px, #3eda0e 0px 0px 10px;
@@ -142,8 +142,6 @@ img {
 .result-header {
     color: white;
     display: flex;
-    grid-column: 2 / 4;
-    grid-row: 2;
     justify-content: center;
 }
 
@@ -152,7 +150,7 @@ img {
     border-radius: 4px;
     color: white;
     display: flex;
-    grid-column: 2 / 4;
+    grid-column: 3 / 5;
     grid-row: 1;
     height: 90px;
     font-size: 46px;
@@ -162,10 +160,20 @@ img {
     position: relative;
 }
 
-.result-header > p {
-    font-size: 40px;
+#main {
+    font-size: 38px;
     font-weight: bold;
+    grid-column: 3/5;
+    grid-row: 2;
     text-align: center;
+}
+
+#sub {
+    color: #3eda0e;
+    font-size: 38;
+    grid-column: 3/5;
+    grid-row: 3;
+    text-shadow: rgb(56, 55, 55) 0px 0px 2px, #3eda0e 0px 0px 5px, #3eda0e 0px 0px 10px;
 }
 
 .comp-choice-header {
@@ -174,50 +182,50 @@ img {
     display: flex;
     font-family: 'Orbitron', sans-serif;
     font-size: 26px;
-    grid-column: 4;
+    grid-column: 5;
     grid-row: 1;
     justify-content: center;
     text-shadow: rgb(56, 55, 55) 0px 0px 2px, #3eda0e 0px 0px 5px, #3eda0e 0px 0px 10px;
 }
 
 .your-rock {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 2;
 }
 
 .your-paper {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 3;
 }
 
 .your-scissors {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 4;
 }
 
 .user-result-animation {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 3;
     transition-property: all 5s ease-in-out 5s;
 }
 .comp-result-animation {
-    grid-column: 3;
+    grid-column: 4;
     grid-row: 3;
     transition-property: all 5s ease-in-out 5s;
 }
 
 .comp-rock {
-    grid-column: 4;
+    grid-column: 5;
     grid-row: 2;
 }
 
 .comp-paper {
-    grid-column: 4;
+    grid-column: 5;
     grid-row: 3;
 }
 
 .comp-scissors {
-    grid-column: 4;
+    grid-column: 5;
     grid-row: 4;
 }
 
